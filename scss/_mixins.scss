@@ -1,0 +1,75 @@
+@mixin pos-a($top: 50%, $left: 50%, $tx: -50%, $ty: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($tx,$ty);
+}
+
+@mixin ho-fo-ac {
+	&:hover,
+	&:focus,
+	&:active {
+		
+	}
+}
+
+@mixin btn {
+	padding: 22px 30px;	
+	border-radius: 28px;
+	border: 2px solid #ffffff;
+	font-size: 1.3em;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: transparent;
+	outline: none;
+}
+
+
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label {
+	display: inline-block;
+    position: relative;
+    padding-left: 23px;
+    line-height: 20px;
+    cursor: pointer;
+} 
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+	content: "";
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: #23ae92;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+	content: "";
+    position: absolute;
+    transition: all 0.2s ease;
+    left: 3px;
+    top: 4px;
+    width: 8px;
+    height: 4px;
+    border-radius: 1px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
